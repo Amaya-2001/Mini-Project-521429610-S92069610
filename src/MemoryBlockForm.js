@@ -19,7 +19,7 @@ function MemoryBlockForm({ setMemoryBlocks, setProcesses }) {
   return (
     <form onSubmit={handleSubmit}>
       <div>
-        <label>Memory Blocks (comma-separated sizes): </label>
+        <label>Memory Blocks</label>
         <input
           type="text"
           value={memoryInput}
@@ -29,7 +29,7 @@ function MemoryBlockForm({ setMemoryBlocks, setProcesses }) {
         />
       </div>
       <div>
-        <label>Processes (comma-separated sizes): </label>
+        <label>Processes</label>
         <input
           type="text"
           value={processInput}
