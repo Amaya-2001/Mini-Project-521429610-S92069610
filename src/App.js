@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import MemoryBlockForm from "./MemoryBlockForm";
 import AllocationResults from "./AllocationResults";
+import "./App.css"; // Import the CSS file for styling
 
 function App() {
   const [memoryBlocks, setMemoryBlocks] = useState([]);
@@ -36,13 +37,15 @@ function App() {
   };
 
   return (
-    <div>
+    <div className="app-container">
       <h1>First Fit Memory Allocation</h1>
       <MemoryBlockForm
         setMemoryBlocks={setMemoryBlocks}
         setProcesses={setProcesses}
       />
-      <button onClick={handleSimulate}>Simulate</button>
+      <button onClick={handleSimulate} className="simulate-button">
+        Simulate
+      </button>
       <AllocationResults results={allocationResults} />
     </div>
   );
