@@ -1,7 +1,7 @@
 import React from "react";
 
-function AllocationResults({ results }) {
-  if (results.length === 0) return null;
+function AllocationResults({ blocks }) {
+  if (blocks.length === 0) return null;
 
   return (
     <div>
@@ -10,15 +10,21 @@ function AllocationResults({ results }) {
         <table>
           <thead>
             <tr>
-              <th>Process</th>
-              <th>Allocated Block</th>
+              <th>Block</th>
+              <th>Processes</th>
             </tr>
           </thead>
           <tbody>
-            {results.map((result, index) => (
+            {blocks.map((block, index) => (
               <tr key={index}>
-                <td>{result.process}</td>
-                <td>{result.block}</td>
+                <td>{`${block.name} (${block.size})`}</td>
+                <td>
+                  {[
+                    ...block.processes
+                      .map((process) => process.name)
+                      .join(", "),
+                  ]}
+                </td>
               </tr>
             ))}
           </tbody>
